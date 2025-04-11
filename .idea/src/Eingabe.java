@@ -1,19 +1,40 @@
 import java.util.Scanner;
-import javax.swing.JOptionPane;
 
 
 public class Eingabe {
-    static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
-    public static void leseZahl () {
-        scanner.nextInt();
+    public static int leseZahl () {
+
+        while (true) {
+            Ausgabe.zahlEingeben();
+            String input = scanner.nextLine();
+
+            try {
+                return Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                Ausgabe.keineZahl();
+            }
+
+        }
 
     }
 
     public static void zahlOutofBounds () {
-
+        System.out.println("---------------------------------");
+        System.out.println(" Die eingegebene Zahl liegt außerhalb des erlaubten Bereichs!");
     }
 
+    public static int leseMatchsticks () {
+        while(true) {
+            int zahl = leseZahl();
+            if (zahl >= 1 && zahl <= 3) {
+                return zahl;
+            } else {
+                Ausgabe.zahlOutofBounds();
+            }
+        }
+    }
 
 
 

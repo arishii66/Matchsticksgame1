@@ -35,16 +35,25 @@ public class Ausgabe {
         System.out.println("Zug nicht möglich!");
     }
 
-    public static void spielstand () {
-
-
-    }
-
-    public static void menschZug () {
+    public static void spielstand (int anzahl) {
+        System.out.println("---------------------------------");
+        System.out.println("Es befinden sich noch " + anzahl + " "
+                + (anzahl == 1 ? "Holz" : "Hoelzer") + " auf dem Tisch.");
 
     }
 
-    public static void computerZug () {
+    public static void menschZug (int gezogen, int verbleibend) {
+        System.out.println("---------------------------------");
+        System.out.println("Sie nehmen " + gezogen + " " + (gezogen == 1 ? "Holz" : "Hoelzer") +
+                " und es bleiben noch " + verbleibend + " " + (verbleibend == 1 ? "Holz" : "Hoelzer") + " uebrig.");
+    }
+
+
+
+    public static void computerZug (int gezogen, int verbleibend) {
+        System.out.println("---------------------------------");
+        System.out.println("Der Computer nimmt " + gezogen + " " + (gezogen == 1 ? "Holz" : "Hoelzer") +
+                " und es bleiben noch " + verbleibend + " " + (verbleibend == 1 ? "Holz" : "Hoelzer") + " uebrig.");
 
     }
 }

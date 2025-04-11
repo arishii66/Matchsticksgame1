@@ -22,9 +22,19 @@ public class Spiel {
     public void computerZiehen() {
         int gezogene = berechneComputerZug();
         matchsticks -= gezogene;
+        Ausgabe.computerZug(gezogene, matchsticks);
 
     }
     public void menschZiehen() {
+        int gezogene = Eingabe.leseMatchsticks();
+        if (gezogene > matchsticks) {
+            Ausgabe.zugNichtMoeglich();
+            menschZiehen();
+        } else {
+            matchsticks -= gezogene;
+            Ausgabe.menschZug(gezogene, matchsticks);
+        }
+
 
     }
 
