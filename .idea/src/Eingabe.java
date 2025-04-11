@@ -3,12 +3,10 @@ import javax.swing.JOptionPane;
 
 
 public class Eingabe {
+    static Scanner scanner = new Scanner(System.in);
 
     public static void leseZahl () {
-
-    }
-
-    public static void zahlEingeben () {
+        scanner.nextInt();
 
     }
 
