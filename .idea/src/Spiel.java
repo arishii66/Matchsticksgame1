@@ -8,12 +8,12 @@ public class Spiel {
         while (matchsticks > 0) {
             computerZiehen();
             if (matchsticks <= 0) {
-                Ausgabe.computerGewinnt();
+                Ausgabe.menschGewinnt();
                 break;
             }
             menschZiehen();
             if (matchsticks <= 0) {
-                Ausgabe.menschGewinnt();
+                Ausgabe.computerGewinnt();
                 break;
             }
         }
